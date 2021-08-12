@@ -1,9 +1,12 @@
-DROP TABLE table_name;
+DROP TABLE countries;
 
 CREATE TABLE countries (
-    country_id int NOT NULL,
-    country_name varchar(255) NOT NULL,
-    region_id int NOT NULL,
-    PRIMARY KEY (country_id)
+    country_id char(2) NOT NULL,
+    country_name varchar(40) NOT NULL,
+    region_id number NOT NULL ,
+    PRIMARY KEY (country_id),
+    FOREIGN KEY (region_id) REFERENCES region(region_id)
 );
+
+
 
